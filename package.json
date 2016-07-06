@@ -1,0 +1,23 @@
+{
+  "name": "Speakplaceholder.js",
+  "version": "1.0.0",
+  "description": "speakplacerholder.js makes your inputs speak their placeholders. Make your inputs speak!",
+  "main": "speakplaceholder.js",
+  "scripts": {
+    "test": "speakplaceholder"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abhisack/speakplaceholder.git"
+  },
+  "keywords": [
+    "accessiblity",
+    "forms"
+  ],
+  "author": "Abhishek Sachan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abhisack/speakplaceholder.git"
+  },
+  "homepage": "http://abhisack.github.io/speakplaceholder/"
+}
