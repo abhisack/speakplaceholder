@@ -280,7 +280,7 @@ footer p {
      </article>
     <article>
       <h1 class="title">Browser Support</h1>
-      <p><em>speakplaceholder.js</em> works on all modern browsers that support <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API">Speech Synthesis API</a>. Check it's browser support on <a href="http://caniuse.com/#search=Speech%20Synthesis%20API">caniuse</a>.</p>
+      <p><em>speakplaceholder.js</em> works on all modern browsers that support <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API">Speech Synthesis API</a>. Check it's browser support on <a href="http://caniuse.com/#search=Speech%20Synthesis%20API">caniuse</a>. However, this browser is <span class="speech-support"></span> supported.</p>
     </article>
     </section>
     
@@ -297,7 +297,15 @@ footer p {
 </div>
     
     <script src="speakplaceholder.js"></script>
+    
+    <script>
+        
+        var speechSupport = document.querySelector(".speech-support");
+        window.addEventListener("load", function() {
+            !window.speechSynthesis ? speechSupport.textContent = "unfortunately not": speechSupport.textContent = "awesomely";
+            });
 
+    </script>
                                          
     </body>
 </html>
