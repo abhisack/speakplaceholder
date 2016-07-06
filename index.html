@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <title>Flexider.JS</title>                                                                                   
+        <meta name="title" content="speakplaceholer.js" />
+        <meta name="author" content="Abhishek Sachan" />
+        <meta name="description" content="Make your inputs speak" />
+        
+        <style>
+body {
+  background-color: #F5F5F5;
+  color: #555;
+  font-size: 1.1em;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p {
+  line-height: 2;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+button {
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+main {
+  min-height: 100vh;
+  
+}
+
+.ribbon {
+  position: fixed;
+  width: 40px;
+  height: 50px;
+  top: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.ribbon svg path:nth-child(1){
+	fill: #418b96;
+}
+
+header {
+  padding: 2em 1em;
+  background: #4aafbe;
+  color: white;
+  box-shadow: 0 .5em .5em rgba(85, 85, 85, 0.22);
+  z-index: 1;
+}
+
+header h2 {
+  color: transparent;
+  text-align: center;
+}
+
+header p {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+header svg {
+	max-width: 425px;
+}
+
+header svg text {
+  font-size: 2em;
+  fill: white;
+  stroke: rgba(85, 85, 85, 0.22);
+  stroke-width: 5;
+}
+
+header h2 svg .speaker {
+  font-size: 4em;
+}
+
+header h2 svg text:first-child {
+     
+}
+
+header h2 svg .sub {
+  font-size: .8em;
+}
+
+header,
+.docs {
+  position: relative;
+}
+
+.docs {
+  	max-width: 800px;
+    margin: 0 auto;
+    z-index: 2;
+    background: white;
+}
+
+.docs section {
+    padding: 2em 1em;
+}
+
+pre {
+  background: #555;
+  color: white;
+  margin-bottom: 1em;
+  overflow: auto;
+  tab-ident: 0;
+}
+code {
+  padding: 1em .5em;
+}
+
+.docs section h1 {
+  margin-bottom: 1em;
+}
+
+.docs section article {
+  margin: 2.6em 0 0 1em;
+}
+
+.docs p em {
+  padding: .2em .5em;
+  background: rgba(85, 85, 85, 0.22);
+  border-radius: .2em;
+}
+
+
+
+.demo-con input {
+	border: 0;
+  display: block;
+  width: 100%;
+  padding: .7em 1em;
+  background: #f3f1f1;
+  margin: 0 0 1em;
+  box-shadow: 0 .1em .1em rgba(85, 85, 85, 0.52);
+}
+
+.demo-con input:focus {
+  background: #efeeee;
+}
+
+.docs,
+footer {
+  border-top: .5em solid rgba(85, 85, 85, 0.22);
+}
+
+footer {
+  padding: .1em 1em;
+  background: rgba(85, 85, 85, 0.22);
+}
+
+
+footer p {
+  margin: 0;
+}
+        </style>
+        
+    </head>
+     <body>
+<main>
+  <header>
+    <h2>
+      <svg viewBox="0 0 425 100">
+      <text y="90" class="speaker">🔊</text>
+      <text x="100" y="64">placeholder</text>
+      <text x="390" y="64" class="sub">.JS</text>
+      </svg>
+        </h2>
+   
+    <section class="intro">
+      <p>
+        'speakplaceholder.js' is a tiny library which makes your inputs speak their placeholders on being focussed. Let your forms speak!
+      </p>
+    </section>
+  </header>
+  <div class="docs">
+    
+    <section class="demo-con">
+      <h1 class="title">Demo</h1>
+      <p>Focus the inputs-</p>
+      
+      <input placeholder="Enter your name" data-spl="true" type="text" type="text">
+      
+    <input placeholder="What's your email?" data-spl="true" type="text">
+      
+<input placeholder="Enter a unique username" data-spl="true" type="text" type="text">
+      
+  <input type="number" placeholder="How old are you?" data-spl="true">
+    </section>
+    
+    <section>
+      <h1 class="title">How to use</h1>
+     <article>
+      <h4>Include file</h4>
+      <p>Simply include <em>speakplaceholder.js</em> in your page</p>
+      <pre>
+      <code>
+      
+  &lt;script src="../speakplaceholder.js>&lt;/script>
+      </code>
+      </pre>
+   </article>
+    
+   <article>
+     <h4>Get Your Input Elements Ready</h4>
+     <p><em>speakplaceholder.js</em> speaks the placeholders of all the input elements that have a <em>placeholder</em> attribute with some value and <em>data-spl</em> attribute set to <em>true</em>.</p>
+     <pre>
+     <code>
+     
+  &lt;input placeholder="Enter your email" data-spl="true" type="text">
+     </code>
+     </pre>
+     </article>
+     
+     <article>
+       <h4>Set Pitch, Volume & Rate</h4>
+       <p>
+         You can set an input element specific <em>pitch</em>, <em>volume</em> and <em>speech-rate</em> using <em>data-spl-pitch</em>, <em>data-spl-volume</em>
+ & <em>data-spl-rate</em> attributes respectively.
+         
+         <pre>
+         <code>
+         
+  &lt;input placeholder="Enter your name"
+   data-spl="true" data-spl-pitch="0.5" 
+   data-spl-volume="0.5" data-spl-rate="1.5" 
+   type="text"/>
+         </code>
+         </pre>
+       </p>
+     </article>
+    <article>
+      <h1 class="title">Browser Support</h1>
+      <p><em>speakplaceholder.js</em> works on all modern browsers that support <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API">Speech Synthesis API</a>. Check it's browser support on <a href="http://caniuse.com/#search=Speech%20Synthesis%20API">caniuse</a>.</p>
+    </article>
+    </section>
+    
+  </div>
+  
+  
+</main>
+<footer>
+  <p>Made with love by <a href="https://abhisheksachan.in">Abhishek Sachan</a> 
+</footer>
+
+<div class="ribbon">
+  <a href="https://github.com/abhisack/speakplaceholder" class="github-corner"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+</div>
+
+                                         
+    </body>
+</html>
