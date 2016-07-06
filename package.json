@@ -1,10 +1,10 @@
 {
-  "name": "Speakplaceholder.js",
+  "name": "speakplaceholder",
   "version": "1.0.0",
   "description": "speakplacerholder.js makes your inputs speak their placeholders. Make your inputs speak!",
   "main": "speakplaceholder.js",
   "scripts": {
-    "test": "speakplaceholder"
+    "test": "speakplaceholder.js"
   },
   "repository": {
     "type": "git",
